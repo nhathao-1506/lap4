@@ -1,0 +1,88 @@
+body {
+    background-color: black;
+}
+.container {
+    width: 1440px;
+    height: 120px;
+    flex-shrink: 0;
+    margin-top: -8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-image: linear-gradient(
+        -269deg,
+        rgba(109, 149, 252, 0.67) -53.1%,
+        rgba(109, 149, 252, 0) 50%
+    );
+}
+.logo {
+    display: flex;
+    width: 244px;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 190px;
+    gap: 3px;
+}
+.lap4 {
+    width: 222px;
+    height: 66px;
+    color: #6d95fc;
+    text-align: center;
+    font-family: Poppins;
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: -1.25px;
+    text-transform: uppercase;
+}
+.Creatic_Agency {
+    width: 174px;
+    height: 23px;
+    color: #fff;
+    text-align: center;
+    font-family: Poppins;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 2.66px;
+}
+.nav_bar {
+    width: 519px;
+    height: 52px;
+    display: inline-flex;
+    padding: 10px;
+    align-items: flex-start;
+    margin-right: 201px;
+    gap: 87px;
+}
+.type {
+    color: #fff;
+    text-align: center;
+    font-family: Poppins;
+    font-size: 21px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+.type:hover {
+    color: #6d95fc;
+}
+.main {
+    width: 1440px;
+    height: 630px;
+    flex-shrink: 0;
+    background-image: linear-gradient(
+        -269deg,
+        rgba(109, 149, 252, 0.67) -53.1%,
+        rgba(109, 149, 252, 0) 50%
+    );
+}
+.main_container {
+    display: flex;
+    justify-content: center;
+}
+.img {
+    max-height: 600px;
+}

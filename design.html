@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="./reset.css" />
+        <link rel="stylesheet" href="./desgin.css" />
+        <title>Design</title>
+    </head>
+    <body>
+        <div class="des_container">
+            <div class="figma_design">
+                <a href="./Ảnh chụp màn hình 2023-11-10 225212.png">
+                    <img
+                        class="img"
+                        src="./Ảnh chụp màn hình 2023-11-10 225212.png"
+                        alt=""
+                    />
+                </a>
+                <button class="btn" onclick="downloadImageFigma()">
+                    Download
+                </button>
+                <button class="btn" style="width: 100px">
+                    <a
+                        href="https://www.figma.com/file/2Sr1l52jWNmQHejtRx7awM/Untitled?type=design&node-id=0%3A1&mode=design&t=CBLVhdOQ1hKLYeP3-1"
+                        >Go To Figma</a
+                    >
+                </button>
+            </div>
+            <div class="paper_design">
+                <a href="./Ảnh chụp màn hình 2023-11-10 234453.png">
+                    <img
+                        class="img"
+                        src="./Ảnh chụp màn hình 2023-11-10 234453.png"
+                        alt=""
+                    />
+                </a>
+                <button class="btn" onclick="downloadImage()">Download</button>
+            </div>
+        </div>
+        <script>
+            function downloadImageFigma() {
+                var imageUrl = "./Ảnh chụp màn hình 2023-11-10 225212.png";
+                var link = document.createElement("a");
+                link.href = imageUrl;
+                link.download = "downloaded_figma_design.jpg";
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+            }
+            function downloadImage() {
+                var imageUrl = "./Ảnh chụp màn hình 2023-11-10 234453.png";
+                var link = document.createElement("a");
+                link.href = imageUrl;
+                link.download = "downloaded_paper_design.jpg";
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+            }
+        </script>
+    </body>
+</html>

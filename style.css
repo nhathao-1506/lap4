@@ -1,0 +1,90 @@
+.BlogComponent {
+    width: 100%;
+    height: 650px;
+    position: relative;
+    background: white;
+}
+.Rectangle1 {
+    width: 1488px;
+    height: 90px;
+    left: 0px;
+    top: 0px;
+    position: absolute;
+    border: 0.5px rgba(0, 0, 0, 0.13) solid;
+}
+.Frame1 {
+    left: 634px;
+    top: 29px;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    display: flex;
+}
+.lap4 {
+    color: rgba(0, 0, 0, 0.6);
+    font-size: 20px;
+    font-family: Montserrat;
+    font-weight: 500;
+    letter-spacing: 2.2px;
+    word-wrap: break-word;
+    margin-left: 50px;
+}
+.Lifestyle {
+    left: 60px;
+    top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+}
+.life {
+    color: black;
+    font-size: 24px;
+    font-family: Cormorant Garamond;
+    font-weight: 700;
+    word-wrap: break-word;
+}
+.style {
+    color: black;
+    font-size: 24px;
+    font-family: Cormorant Garamond;
+    font-weight: 400;
+    word-wrap: break-word;
+}
+.Frame2 {
+    width: 400px;
+    height: 490px;
+    top: 100px;
+    position: relative;
+}
+.pic {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+}
+.Frame3 {
+    width: 400px;
+    height: 490px;
+    top: 100px;
+    position: relative;
+}
+.Frame4 {
+    width: 400px;
+    height: 490px;
+    top: 100px;
+    position: relative;
+}
+.EiSearch {
+    width: 24px;
+    height: 24px;
+    left: 1390px;
+    top: 23px;
+    position: absolute;
+}
+img {
+    width: 400px;
+    height: 490px;
+}

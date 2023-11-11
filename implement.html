@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="vi">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="./reset.css" />
+        <link rel="stylesheet" href="./implement.css" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+        <title>Implement</title>
+    </head>
+    <body>
+        <h1 class="cont_h1">Quản Lý thiết bị Điện Tử </h1>
+        <div class="Impl_container">
+            <div class="content">
+                <div class="MSP content_type">
+                    <div class="p">
+                        <p>Mã Sản Phẩm:</p>
+                    </div>
+                    <div class="input">
+                        <input type="text" id="maSanPham" name="name" autocomplete="off" />
+                    </div>
+                </div>
+                <div class="TSP content_type">
+                    <div class="p">
+                        <p>Tên Sản Phẩm:</p>
+                    </div>
+                    <div class="input">
+                        <input type="text" id="tenSanPham" name="name" autocomplete="off" />
+                    </div>
+                </div>
+                <div class="HSX content_type">
+                    <div class="p">
+                        <p>Hãng Sản Xuất:</p>
+                    </div>
+                    <div class="input">
+                        <input type="text" id="hangSanXuat" name="name" autocomplete="off" />
+                    </div>
+                </div>
+                <div class="NSX content_type">
+                    <div class="p">
+                        <p>Năm Sản Xuất:</p>
+                    </div>
+                    <div class="input">
+                        <input type="text" id="namSanXuat" name="name" autocomplete="off" />
+                    </div>
+                </div>
+                <div class="soluong content_type">
+                    <div class="p">
+                        <p>Số Lượng:</p>
+                    </div>
+                    <div class="input">
+                        <input type="text" id="soLuong" name="name" autocomplete="off" />
+                    </div>
+                </div>
+                <div class="giatien content_type">
+                    <div class="p">
+                        <p>Giá Tiền:</p>
+                    </div>
+                    <div class="input">
+                        <input type="text" id="giaTien" name="name" autocomplete="off" />
+                    </div>
+                </div>
+            </div>
+            <div class="btn">
+                <button class="button" onclick="themSanPham()">Thêm</button>
+                <button class="button" onclick="capNhatSanPham()">Sửa</button>
+                <button class="button" onclick="xoaSanPham()">Xóa</button>
+                <button class="button" onclick="timKiemSanPham()">Tìm Kiếm</button>
+            </div>     
+        </div>
+        <div class="list">
+            <div class="product-list">
+                <h2>Danh sách sản phẩm</h2>
+                <ul id="listSanPham">
+                   
+                </ul>
+            </div>
+        </div>
+        <script>
+            var danhSachSanPham = [];
+
+            function themSanPham() {
+                var maSanPham = document.getElementById("maSanPham").value;
+                var tenSanPham = document.getElementById("tenSanPham").value;
+                var hangSanXuat = document.getElementById("hangSanXuat").value;
+                var namSanXuat = document.getElementById("namSanXuat").value;
+                var soLuong = document.getElementById("soLuong").value;
+                var giaTien = document.getElementById("giaTien").value;
+                var sanPham = {
+                    maSanPham: maSanPham,
+                    tenSanPham: tenSanPham,
+                    hangSanXuat: hangSanXuat,
+                    namSanXuat: namSanXuat,
+                    soLuong: soLuong,
+                    giaTien: giaTien
+                };
+
+                danhSachSanPham.push(sanPham);
+                hienThiDanhSachSanPham();
+
+                document.getElementById("maSanPham").value = "";
+                document.getElementById("tenSanPham").value = "";
+                document.getElementById("hangSanXuat").value = "";
+                document.getElementById("namSanXuat").value = "";
+                document.getElementById("soLuong").value = "";
+                document.getElementById("giaTien").value = "";
+            }
+
+            function hienThiDanhSachSanPham() {
+                var listSanPham = document.getElementById("listSanPham");
+                listSanPham.innerHTML = "";
+
+                for (var i = 0; i < danhSachSanPham.length; i++) {
+                    var sanPham = danhSachSanPham[i];
+                    var listItem = document.createElement("li");
+                    listItem.textContent = "Mã Sản Phẩm: " + sanPham.maSanPham + ", Tên Sản Phẩm: " + sanPham.tenSanPham+ ", Hãng Sản Xuất: " + sanPham.hangSanXuat 
+                    + ", Năm Sản Xuất: " + sanPham.namSanXuat + ", Số Lượng: " + sanPham.soLuong + ", Giá Tiền: " + sanPham.giaTien;
+                    listSanPham.appendChild(listItem);
+                }
+            }
+
+            function timKiemSanPham() {
+                var maSanPham = document.getElementById("maSanPham").value;
+
+                for (var i = 0; i < danhSachSanPham.length; i++) {
+                    if (danhSachSanPham[i].maSanPham === maSanPham) {
+                        alert("Tìm thấy sản phẩm:\nMã Sản Phẩm: " + danhSachSanPham[i].maSanPham + "\nTên Sản Phẩm: " + danhSachSanPham[i].tenSanPham
+                        +"\nNăm Sản Xuất: " + danhSachSanPham[i].namSanXuat + "\nSố Lượng: " + danhSachSanPham[i].soLuong + "\nGiá Tiền: " + danhSachSanPham[i].giaTien);
+                        return;
+                    }
+                }
+
+                alert("Không tìm thấy sản phẩm có mã: " + maSanPham);
+            }
+
+            function xoaSanPham() {
+                var maSanPham = document.getElementById("maSanPham").value;
+
+                for (var i = 0; i < danhSachSanPham.length; i++) {
+                    if (danhSachSanPham[i].maSanPham === maSanPham) {
+                        danhSachSanPham.splice(i, 1);
+                        hienThiDanhSachSanPham();
+                        return;
+                    }
+                }
+
+                alert("Không tìm thấy sản phẩm có mã: " + maSanPham + " để xóa");
+            }
+
+            function capNhatSanPham() {
+                var maSanPham = document.getElementById("maSanPham").value;
+                var tenSanPham = document.getElementById("tenSanPham").value;
+                var hangSanXuat = document.getElementById("hangSanXuat").value;
+                var namSanXuat = document.getElementById("namSanXuat").value;
+                var soLuong = document.getElementById("soLuong").value;
+                var giaTien = document.getElementById("giaTien").value;
+
+                for (var i = 0; i < danhSachSanPham.length; i++) {
+                    if (danhSachSanPham[i].maSanPham === maSanPham) {
+                        danhSachSanPham[i].tenSanPham = tenSanPham;
+                        danhSachSanPham[i].hangSanXuat = hangSanXuat;
+                        danhSachSanPham[i].namSanXuat = namSanXuat;
+                        danhSachSanPham[i].soLuong = soLuong;
+                        danhSachSanPham[i].giaTien = giaTien;
+                        hienThiDanhSachSanPham();
+                        return;
+                    }
+                }
+
+                alert("Không tìm thấy sản phẩm có mã: " + maSanPham + " để cập nhật thông tin");
+            }
+        </script>
+    </body>
+</html>
